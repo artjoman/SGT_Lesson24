@@ -1,7 +1,9 @@
 import java.util.Objects;
 
 class Vertex {
-    String label;
+
+    public String label;
+
     Vertex(String label) {
         this.label = label;
     }
@@ -13,7 +15,7 @@ class Vertex {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Vertex vertex = (Vertex) o;
-        return label.equals(vertex.label);
+        return Objects.equals(label, vertex.label);
     }
 
     @Override

@@ -1,3 +1,7 @@
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 public class Lesson24 {
 
     public static void main(String[] args) {
@@ -17,6 +21,32 @@ public class Lesson24 {
         }
 
         // 4. How many direct flights are there in Graph
+
+        int flightCounter = 0;
+        for (Vertex myVertex : myAirportGraph.getAdjVertices().keySet()) {
+            for (Vertex flight : myAirportGraph.getAdjVertices(myVertex.label)
+            ) {
+                flightCounter++;
+            }
+        }
+        System.out.println("There are " + flightCounter + " in total");
+
+        // 5. Direct flights from Cape Town
+        System.out.println("--- Direct Flights from Cape Town:");
+        for (Vertex directFlight :
+                myAirportGraph.getAdjVertices("Cape Town")) {
+            System.out.println(directFlight.label);
+        }
+
+        // 6. Direct flights count from Jo'burg airport
+        flightCounter = 0;
+        System.out.println("--- Direct Flights count from Jo'Burg:");
+        for (Vertex directFlight :
+                myAirportGraph.getAdjVertices("Jo'Burg")) {
+            flightCounter++;
+        }
+
+        System.out.println("Direct flights from Jo'Burg: " + flightCounter);
 
     }
 
