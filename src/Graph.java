@@ -6,6 +6,14 @@ import java.util.Map;
 class Graph {
     private Map<Vertex, List<Vertex>> adjVertices = new HashMap<>();
 
+    public Map<Vertex, List<Vertex>> getAdjVertices() {
+        return adjVertices;
+    }
+
+    public void setAdjVertices(Map<Vertex, List<Vertex>> adjVertices) {
+        this.adjVertices = adjVertices;
+    }
+
     // standard constructor, getters, setters
 
     void addVertex(String label) {
